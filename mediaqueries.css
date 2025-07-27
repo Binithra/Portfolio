@@ -10,6 +10,14 @@
     #projects {
       height: fit-content;
     }
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+      gap: 15px; /* Reduce gap for smaller screens */
+    }
+  
+    .skill-card {
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
   }
   
   @media screen and (max-width: 1200px) {
@@ -49,6 +57,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 60px 15px; /* Adjust padding for smaller screens */
+      margin: 30px auto; /* Adjust margin for smaller screens */
+    }
+  }
+  
   
   @media screen and (max-width: 600px) {
     #contact,
