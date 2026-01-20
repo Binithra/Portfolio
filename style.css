@@ -249,7 +249,6 @@ a:hover {
   justify-content: center;
   text-align: center; /* Center-align text */
   gap: 1.5rem; /* Add spacing between elements */
-  max-width: 800px; /* Limit the width for better readability */
   margin: 0 auto;
 }
 
@@ -259,30 +258,30 @@ a:hover {
 }
 
 .greeting {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #b0b0b0 ;
   margin-bottom: 0.5rem;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 4.6rem;
   font-weight: bold;
   color: #000000ca;
   text-shadow: #000000;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.1rem; */
 }
 
 .role {
   font-size: 2rem;
-  color: #8a5cf675;
-  margin-bottom: 1rem;
+  color: #8b5cf6;
+  margin-bottom: 0.5rem;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   color: #b0b0b0;
-  margin-bottom: 2rem;
+  margin-bottom: 3.6rem;
 }
 
 /* buttons */
@@ -566,6 +565,57 @@ a:hover {
   animation: modalFadeIn 0.4s;
 }
 
+.education-modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  max-width: 600px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(127, 90, 240, 0.18);
+  position: relative;
+}
+
+.main-degree-highlight {
+  text-align: center;
+  background: linear-gradient(90deg, #7f5af0, #ff6f61);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-degree-highlight h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.main-degree-highlight .degree-meta {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #f0e9ff;
+}
+
+.scrollable-content {
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  flex-grow: 1;
+}
+
+/* Optional: add custom scrollbar style */
+.scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
 @keyframes modalFadeIn {
   from { opacity: 0; transform: scale(0.95);}
   to { opacity: 1; transform: scale(1);}
@@ -613,6 +663,39 @@ a:hover {
     width: 65px;
   }
 }
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.certificate-card {
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(127, 90, 240, 0.2);
+}
+
+.cert-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 
 /* Career Summary Section */
 #career-summary {
@@ -774,7 +857,6 @@ a:hover {
 }
 
 /* Skills Section */
-/* Modern Skills Section */
 .skills-modern-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -794,10 +876,11 @@ a:hover {
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
-  min-height: 220px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-bottom: 1rem;
 }
 
 .skill-card:hover {
@@ -1018,8 +1101,8 @@ a:hover {
 
 /*contact */
 .contact-modern-container.contact-modern-wide.alt-bg {
-  max-width: 1000px;
-  width: 95vw;
+  /* max-width: 1000px; */
+  /* width: 95vw; */
   margin: 1.5rem auto 2rem auto;
   padding: 2.5rem 2rem;
   border-radius: 20px;
@@ -1036,45 +1119,34 @@ a:hover {
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.contact-animated-arrow-left {
-  position: absolute;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 3;
-  animation: arrow-slide-left 3s linear infinite;
+  align-items: flex-start;
 }
 
 .contact-modern-content .title {
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   background: linear-gradient(90deg, #7f5af0 0%, #ff6f61 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .contact-description {
   font-size: 1.1rem;
   color: #7d7d7d;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .contact-modern-socials {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 0;
-  background: rgba(255,255,255,0.7);
+  gap: 1.2rem;
+  justify-content: left;
+  align-items: left;
   border-radius: 24px;
-  padding: 1rem 2rem;
+  /* margin-top: 3rem; */
+  /* padding: 1rem 2rem; */
+  position: static;
   box-shadow: 0 2px 12px rgba(127, 90, 240, 0.08);
 }
 
@@ -1084,13 +1156,56 @@ a:hover {
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 2px 8px rgba(127, 90, 240, 0.10);
-  padding: 6px;
+  padding: 2px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .contact-modern-icon img:hover {
   transform: scale(1.18) rotate(-8deg);
   box-shadow: 0 4px 16px rgba(127, 90, 240, 0.18);
+}
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-info-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(127, 90, 240, 0.10);
+  padding: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-info-item:hover .contact-info-icon {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(127, 90, 240, 0.18);
+}
+
+.contact-info-link {
+  font-size: 1rem;
+  color: #5a2fc2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-info-link:hover {
+  color: #8b5cf6;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
 }
 
 @media (max-width: 900px) {
@@ -1146,7 +1261,7 @@ a:hover {
   color: #ffffff;
   font-weight: 700;
   font-size: 2rem;
-  padding: 5px 14px;
+  padding: 5px 16px;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(127, 90, 240, 0.10);
   margin-bottom: 2px;
