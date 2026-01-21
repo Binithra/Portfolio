@@ -5,6 +5,36 @@ function toggleMenu() {
     icon.classList.toggle('open');
 }
 
+// Toggle career details on mobile
+function toggleCareerDetails(button) {
+    const timelineContent = button.closest('.timeline-content');
+    timelineContent.classList.toggle('expanded');
+    timelineContent.classList.toggle('collapsed');
+    button.textContent = timelineContent.classList.contains('expanded') ? 'Hide Details' : 'Show Details';
+}
+
+// Initialize mobile career toggles
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth <= 900;
+    if (isMobile) {
+        const timelineContents = document.querySelectorAll('.timeline-content');
+        timelineContents.forEach(content => {
+            // Add collapsed state and toggle button
+            if (content.querySelector('ul')) {
+                content.classList.add('collapsed');
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'timeline-toggle-btn';
+                toggleBtn.textContent = 'Show Details';
+                toggleBtn.onclick = function(e) {
+                    e.preventDefault();
+                    toggleCareerDetails(this);
+                };
+                content.appendChild(toggleBtn);
+            }
+        });
+    }
+});
+
 
     // 3D Carousel Auto-Rotate
     const carouselImgs = document.querySelectorAll('.carousel-3d-img');

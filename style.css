@@ -154,13 +154,43 @@ a:hover {
 
 #hamburger-nav {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 10vh;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 12px rgba(127, 90, 240, 0.08);
+  z-index: 100;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#hamburger-nav .logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #5a2fc2;
+  cursor: pointer;
+}
+
+#hamburger-nav .logo img {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.5rem;
 }
 
 .hamburger-menu {
-  position: relative;
-  display: inline-block;
-  margin: 2px;
-  z-index: 1000; /* Ensure the hamburger menu is above other elements */
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure the hamburger menu is above other elements */
 }
 
 .hamburger-icon {
@@ -431,7 +461,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 2s cubic-bezier(.77,0,.18,1);
+  transition: transform 1s cubic-bezier(.77,0,.18,1);
 }
 
 .carousel-3d-img {
@@ -445,8 +475,8 @@ a:hover {
   box-shadow: 0 4px 24px rgba(127, 90, 240, 0.18);
   background: #fff;
   transition:
-    transform 1.2s cubic-bezier(.77,0,.18,1),
-    opacity 0.8s;
+    transform 0.7s cubic-bezier(.77,0,.18,1),
+    opacity 0.5s;
   opacity: 0;
   z-index: 1;
   pointer-events: none;
@@ -515,11 +545,16 @@ a:hover {
   }
   .about-carousel-3d {
     width: 95vw;
-    height: 220px;
+    height: auto;
+  }
+  .carousel-3d-track {
+    height: auto;
   }
   .carousel-3d-img {
-    width: 120px;
-    height: 180px;
+    width: min(420px, 90vw);
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
   }
 }
 
@@ -817,6 +852,32 @@ a:hover {
   line-height: 1.6;
   font-weight: 400;
   color: #000000a7;
+}
+
+.timeline-content .timeline-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #7f5af0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.timeline-content .details-list {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .timeline-content .timeline-toggle {
+    display: inline-block;
+  }
+  .timeline-content .details-list.collapsed {
+    display: none;
+  }
 }
 
 /* Adjust the about section layout */
@@ -1156,14 +1217,14 @@ a:hover {
   box-shadow: 0 8px 32px 0 rgba(127, 90, 240, 0.10);
   background: radial-gradient(circle at 20% 40%, #f3f3ff 60%, #ffe6f6 100%);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
 .contact-modern-content {
   width: 100%;
-  max-width: 500px;
+  max-width: calc(100% - 260px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1174,8 +1235,9 @@ a:hover {
   background: linear-gradient(90deg, #7f5af0 0%, #ff6f61 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-  text-align: left;
+  margin-bottom: 3.2rem;
+  text-align: center;
+  width: 80%;
 }
 
 /* .contact-description {
@@ -1255,6 +1317,11 @@ a:hover {
   text-underline-offset: 0.5rem;
 }
 
+.contact-info-items.contact-info-right {
+  /* align-items: flex-end; */
+  text-align: left;
+}
+
 @media (max-width: 900px) {
   .contact-modern-container.contact-modern-wide.alt-bg {
     flex-direction: column;
@@ -1265,6 +1332,11 @@ a:hover {
   .contact-modern-content {
     align-items: center;
     max-width: 100%;
+  }
+  .contact-info-items.contact-info-right {
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
   }
   .contact-animated-arrow-left {
     left: 50%;
