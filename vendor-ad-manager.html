@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binithra</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="mediaqueries.css"> 
+
+    <link rel="icon" href="./assets/short logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/short logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        #vendor-ad-nav {
+            padding-top: 10vh;
+            min-height: 100vh;
+        }
+
+        .vendor-ad-hero {
+            padding: 4rem 20px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1240px) {
+            .vendor-ad-hero {
+                padding: 4rem calc((100% - 1200px) / 2);
+            }
+        }
+
+        .vendor-ad-title {
+            font-size: 2.5rem;
+            color: #000000ca;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .vendor-ad-image-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 2rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(127, 90, 240, 0.18);
+        }
+
+        .vendor-ad-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .vendor-ad-hero {
+                padding: 3rem 5%;
+            }
+
+            .vendor-ad-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vendor-ad-hero {
+                padding: 2rem 15px;
+            }
+
+            .vendor-ad-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .vendor-ad-hero {
+                padding: 2rem 15px;
+            }
+
+            .vendor-ad-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="desktop-nav">
+        <a href="index.html" class="logo">
+            <img src="./assets/long logo 1.png" alt="Logo" />
+        </a>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#career-summary">Experience</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <a href="index.html" class="logo">
+            <img src="./assets/long logo 1.png" alt="Logo" />
+        </a>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
+            <div class="menu-links">
+                <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="index.html#career-summary" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <section id="vendor-ad-nav">
+        <!-- <div class="vendor-ad-hero"> -->
+            <!-- <h1 class="vendor-ad-title">Vendor Ad Manager (Web)</h1> -->
+            <div class="vendor-ad-image-container">
+                <img src="./assets/project 1.png" alt="Vendor Ad Manager (Web)" />
+            </div>
+        <!-- </div> -->
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
