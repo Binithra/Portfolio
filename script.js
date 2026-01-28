@@ -5,6 +5,31 @@ function toggleMenu() {
     icon.classList.toggle('open');
 }
 
+// Toggle job details visibility
+function toggleJobDetails(button) {
+    // Find the nearest details-list that comes after the button
+    let detailsList = button.nextElementSibling;
+    
+    // Skip the date paragraph if it's between button and details-list
+    if (detailsList && detailsList.classList.contains('timeline-date')) {
+        detailsList = detailsList.nextElementSibling;
+    }
+    
+    if (detailsList && detailsList.classList.contains('details-list')) {
+        const isCollapsed = detailsList.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            // Expanding - show tasks
+            detailsList.classList.remove('collapsed');
+            button.innerHTML = '<span class="toggle-text">Hide Tasks</span> <span class="toggle-icon">▲</span>';
+        } else {
+            // Collapsing - hide tasks
+            detailsList.classList.add('collapsed');
+            button.innerHTML = '<span class="toggle-text">View Tasks</span> <span class="toggle-icon">▼</span>';
+        }
+    }
+}
+
 // Toggle career details on mobile
 function toggleCareerDetails(button) {
     const timelineContent = button.closest('.timeline-content');
@@ -63,6 +88,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carouselImgs.length) {
       updateCarousel3D();
       setInterval(autoRotateCarousel, 3000);
+    }
+
+    // Reset carousel to first image when About section comes into view
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            carouselIndex = 0;
+            updateCarousel3D();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(aboutSection);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
