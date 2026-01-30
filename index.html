@@ -48,27 +48,31 @@
         </div>
     </nav>
 
-    <section id="profile">
-    
-      <div class="profile-container">
-        <div class="profile-text">
-          <p class="greeting">Hi!<span class="wave-emoji">👋</span>, I'm</p>
-          <h1 class="name">Rushini Binithra</h1>
-          <h2 class="role">UI/UX Designer</h2>
-          <p class="description">
-            With 2.5+ years of experience in user research, design systems and cross-functional collaboration, I craft solutions that align user needs with business goals. Beyond product design, I spend time creating social media posts, banners and eBooks, exploring creativity in different design forms.</p>
+    <section id="profile" aria-label="Hero">
+      <div class="profile-container hero-grid">
+        <div class="hero-content profile-text">
+          <p class="greeting">Hi <span class="wave-emoji">👋</span> I'm</p>
+          <h1 class="name-hero">Rushini Binithra</h1>
+          <h2 class="hero-headline">UI/UX Designer who creates clear, human-first product experiences</h2>
+          <p class="hero-sub">I translate research into refined interfaces that simplify complex workflows and increase product adoption.</p>
+
+          <div class="experience-pills" aria-hidden="false">
+            <span class="pill">Fintech & SME platforms</span>
+            <span class="pill">Telecom & CRM portals</span>
+            <span class="pill">HR management systems</span>
+            <span class="pill">Marketplace & ad platforms</span>
+            <span class="pill">Tax & enterprise tools</span>
+          </div>
         </div>
-   <div class="arrow" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });">
-  <svg viewBox="0 0 48 48">
-    <defs>
-      <linearGradient id="arrow-gradient" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#7f5af0"/>
-        <stop offset="100%" stop-color="#ff6f61"/>
-      </linearGradient>
-    </defs>
-    <path d="M24 10v28M24 38l-10-10M24 38l10-10" stroke="url(#arrow-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="card-visual">
+            <div class="card-content">
+              <img src="./assets/profile.png" alt="project thumbnail"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
       <section id="projects">
@@ -80,9 +84,9 @@
               <img src="./assets/project-6.png" alt="Vendor Ad Manager" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Vendor Ad Manager</h2><br>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'vendor-ad-manager.html'">View Project</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="vendor-ad-manager.html" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
       </div>
       
       <div class="details-container color-container">
@@ -90,9 +94,9 @@
               <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Sinhala Learning Platform for Hearing Impaired Children</h2>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'https://www.behance.net/gallery/187607253/Sinhala-Learning-Platform-for-Hearing-Impaired-Children'">View Project</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="https://www.behance.net/gallery/187607253/Sinhala-Learning-Platform-for-Hearing-Impaired-Children" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
       </div>
 
       <div class="details-container color-container">
@@ -100,9 +104,9 @@
               <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Movie Ticket Booking Mobile Application</h2>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'https://www.behance.net/gallery/188387341/Movie-Ticket-Booking-Application0.'">View Project</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="https://www.behance.net/gallery/188387341/Movie-Ticket-Booking-Application0." target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
       </div>
 
       <div class="details-container color-container">
@@ -110,9 +114,9 @@
               <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Website Design for a Video Conferencing App</h2>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'https://www.behance.net/gallery/213206473/BeamMeet-Video-Conferencing-App-Landing-Page-Design'">View Project</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="https://www.behance.net/gallery/213206473/BeamMeet-Video-Conferencing-App-Landing-Page-Design" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
       </div>
       
       <div class="details-container color-container">
@@ -120,9 +124,9 @@
               <img src="./assets/project-4.png" alt="Project 4" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Satellite TV problem reporting Mobile App</h2>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'https://www.behance.net/gallery/187609117/Satellite-TV-problem-reporting-mobile-app'">View Project</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="https://www.behance.net/gallery/187609117/Satellite-TV-problem-reporting-mobile-app" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
       </div>
       <!-- <div class="details-container color-container">
           <div class="article-container">
@@ -138,9 +142,9 @@
               <img src="./assets/project-5.png" alt="Project 5" class="project-img" />
           </div>
           <h2 class="experience-sub-title project-title">Creative Designs</h2><br>
-          <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href = 'https://docs.google.com/presentation/d/1k6jg5sZ2eXGpUvLWlAKVqIQOq6g1x_WvUpYnE_sa_hw/edit?usp=sharing'">View Designs</button>
-          </div>
+            <div class="btn-container">
+              <a class="btn btn-color-2 project-btn" href="https://docs.google.com/presentation/d/1k6jg5sZ2eXGpUvLWlAKVqIQOq6g1x_WvUpYnE_sa_hw/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View Designs</a>
+            </div>
       </div>
       </div>
   </section>
@@ -356,13 +360,13 @@
           <span class="about-icon">📊</span>
           <span>From wireframes to high-fidelity UIs, I take a data-driven approach-researching users, optimizing flows and refining interactions to create smooth, user-friendly journeys.</span>
         </div>
-        <div class="about-card">
+        <!-- <div class="about-card">
           <span class="about-icon">🤝</span>
           <span>I’ve worked with cross-functional teams to design scalable, engaging experiences across enterprise CRM platforms, self-care portals, HR systems, tax management tools and SME financial tools.</span>
-        </div>
+        </div> -->
         <div class="about-card">
           <span class="about-icon">🌐</span>
-          <span>My experience spans diverse domains, including telecommunications, HR, fintech and business finance platforms.</span>
+          <span>My experience spans fintech, telecommunications, HR, and SME-focused platforms, including enterprise CRM portals, marketplaces, ad platforms, and tax and business management tools.”</span>
         </div>
       </div>
     </div>
